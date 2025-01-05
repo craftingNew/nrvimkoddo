@@ -1,12 +1,4 @@
-vim.cmd.colorscheme("nirvana")
-
-require("impatient")
--- All The Plugins
+require("keybinds")
 require("plugins")
-
--- Core Configuration
-require("core.options")
-require("core.keybinds")
-
--- Loading The Statusline
-require("staline")
+require("disabled")
+require("options")
