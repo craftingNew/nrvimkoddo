@@ -74,6 +74,13 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/home/namish/.local/share/nvim/site/pack/packer/opt/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
   ["alpha-nvim"] = {
     config = { "require('config/dashboard')" },
     loaded = false,
@@ -100,13 +107,23 @@ _G.packer_plugins = {
     path = "/home/namish/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  ["cmp-vsnip"] = {
+  ["cmp-nvim-lua"] = {
     loaded = true,
-    path = "/home/namish/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
-    url = "https://github.com/hrsh7th/cmp-vsnip"
+    path = "/home/namish/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
+    url = "https://github.com/hrsh7th/cmp-nvim-lua"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/home/namish/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/namish/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["filetype.nvim"] = {
-    config = { "require('config/filetype')" },
+    config = { "require('filetype').setup{}" },
     loaded = true,
     path = "/home/namish/.local/share/nvim/site/pack/packer/start/filetype.nvim",
     url = "https://github.com/nathom/filetype.nvim"
@@ -116,24 +133,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/namish/.local/share/nvim/site/pack/packer/start/impatient.nvim",
     url = "https://github.com/lewis6991/impatient.nvim"
-  },
-  ["lspkind-nvim"] = {
-    loaded = true,
-    path = "/home/namish/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
-    url = "https://github.com/onsails/lspkind-nvim"
-  },
-  ["lualine.nvim"] = {
-    config = { "require('config/lualine')" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/namish/.local/share/nvim/site/pack/packer/opt/lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
-  ["nui.nvim"] = {
-    loaded = true,
-    path = "/home/namish/.local/share/nvim/site/pack/packer/start/nui.nvim",
-    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-autopairs"] = {
     config = { "require('config/autopair')" },
@@ -149,7 +148,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-colorizer.lua"] = {
-    config = { "require('config/colorizer')" },
+    config = { 'require("config/colorizer")' },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -210,12 +209,13 @@ _G.packer_plugins = {
     path = "/home/namish/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["searchbox.nvim"] = {
+  ["staline.nvim"] = {
+    config = { "require('config/staline')" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "/home/namish/.local/share/nvim/site/pack/packer/opt/searchbox.nvim",
-    url = "https://github.com/VonHeikemen/searchbox.nvim"
+    path = "/home/namish/.local/share/nvim/site/pack/packer/opt/staline.nvim",
+    url = "https://github.com/tamton-aquib/staline.nvim"
   },
   ["telescope.nvim"] = {
     commands = { "Telescope" },
@@ -232,30 +232,10 @@ _G.packer_plugins = {
     path = "/home/namish/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
-  ["trouble.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/namish/.local/share/nvim/site/pack/packer/opt/trouble.nvim",
-    url = "https://github.com/folke/trouble.nvim"
-  },
-  ["twilight.nvim"] = {
-    config = { "require('config/focus')" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/namish/.local/share/nvim/site/pack/packer/opt/twilight.nvim",
-    url = "https://github.com/folke/twilight.nvim"
-  },
   ["vim-startuptime"] = {
     loaded = true,
     path = "/home/namish/.local/share/nvim/site/pack/packer/start/vim-startuptime",
     url = "https://github.com/dstein64/vim-startuptime"
-  },
-  ["vim-vsnip"] = {
-    loaded = true,
-    path = "/home/namish/.local/share/nvim/site/pack/packer/start/vim-vsnip",
-    url = "https://github.com/hrsh7th/vim-vsnip"
   },
   ["which-key.nvim"] = {
     config = { "require('config/whichkey')" },
@@ -271,34 +251,26 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/namish/.local/share/nvim/site/pack/packer/opt/yuck.vim",
     url = "https://github.com/elkowar/yuck.vim"
-  },
-  ["zen-mode.nvim"] = {
-    config = { "require('config/focus')" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/namish/.local/share/nvim/site/pack/packer/opt/zen-mode.nvim",
-    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: impatient.nvim
-time([[Config for impatient.nvim]], true)
-require('impatient')
-time([[Config for impatient.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require('config/autocomplete')
-time([[Config for nvim-lspconfig]], false)
 -- Config for: filetype.nvim
 time([[Config for filetype.nvim]], true)
-require('config/filetype')
+require('filetype').setup{}
 time([[Config for filetype.nvim]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 require('config/terminal')
 time([[Config for toggleterm.nvim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require('config/autocomplete')
+time([[Config for nvim-lspconfig]], false)
+-- Config for: impatient.nvim
+time([[Config for impatient.nvim]], true)
+require('impatient')
+time([[Config for impatient.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-cmp ]]
@@ -311,16 +283,16 @@ time([[Sequenced loading]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NvimTreeToggle lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NvimTreeToggle lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'which-key.nvim', 'zen-mode.nvim', 'nvim-treesitter', 'lualine.nvim', 'trouble.nvim', 'yuck.vim', 'searchbox.nvim', 'bufferline.nvim', 'twilight.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-ts-autotag'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-ts-autotag', 'LuaSnip'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'yuck.vim', 'nvim-treesitter', 'which-key.nvim', 'staline.nvim', 'bufferline.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead * ++once lua require("packer.load")({'alpha-nvim', 'nvim-colorizer.lua'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")

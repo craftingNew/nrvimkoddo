@@ -1,5 +1,4 @@
 local actions = require('telescope.actions')
-
 local options = {
   defaults = {
     riprep_arguments = {
@@ -11,7 +10,7 @@ local options = {
       "--column",
       "--smart-case",
     },
-    prompt_prefix = "   ",
+    prompt_prefix = "   ",
     selection_caret = "  ",
     entry_prefix = "  ",
     initial_mode = "insert",
@@ -28,7 +27,7 @@ local options = {
         mirror = false,
       },
       width = 0.80,
-      height = 0.87,
+      height = 0.85,
       preview_cutoff = 120,
     },
     file_sorter = require("telescope.sorters").get_fuzzy_file,
@@ -49,7 +48,9 @@ local options = {
       n = { ["q"] = require("telescope.actions").close },
     },
   },
+  extensions = {
 
+  },
   extensions_list = { "themes", "terms" },
 }
 require('telescope').setup(options)

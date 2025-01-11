@@ -26,25 +26,41 @@ let g:colors_name = "warm"
 set background=dark
 set t_Co=256
 hi Normal guifg=#dfdde0 ctermbg=NONE guibg=#0f0f0f gui=NONE
-
 set t_Co=256
 let &t_ut=''
 if exists('+termguicolors')
   set termguicolors
 endif
-
 " Focused line Number toggle
 if !exists("g:warmNR")
     let g:warmNR = 1
 endif
 
+
+"Staline
+exe "hi StalineFolderIcon guibg="s:warm1_gui. " guifg="s:warmbg_gui
+exe "hi StalineFolderSep guibg="s:warmbg_gui. " guifg="s:warm1_gui
+exe "hi StalineFolderText guibg="s:warm8_gui. " guifg="s:warm15_gui
+exe "hi StalineFilename guibg="s:warmbg_gui. " guifg="s:warm15_gui
+exe "hi StalineLogo guibg="s:warmbg_gui. " guifg="s:warm12_gui
+exe "hi StalineProgress guibg="s:warm8_gui. " guifg="s:warm15_gui
+exe "hi StalineProgressSep guibg="s:warmbg_gui. " guifg="s:warm10_gui
+exe "hi StalineProgressSepIcon guibg="s:warm10_gui. " guifg="s:warm8_gui
+exe "hi StalineBranch guifg="s:comment
+"Completiton
+exe "hi CmpItemAbbrMatch guifg="s:warm12_gui
+exe "hi CmpItemAbbr guifg="s:warmfg_gui
+exe "hi CmpBorder guifg="s:warm12_gui
+exe "hi CmpDocBorder guifg="s:warm12_gui. " guibg="s:warmbg_gui
+exe "hi CmPmenu guibg="s:warmbg_gui
+"SearchBox
 exe "hi FloatBorder guifg="s:warm12_gui
 
+" Diagnostics
 exe "hi DiagnosticSign guibg="s:warmbg_gui
 exe "hi DiagnosticError guifg="s:warm9_gui
 exe "hi DiagnosticWarn guifg="s:warm11_gui
 exe "hi DiagnosticHint guifg="s:warm14_gui
-
 
 "Alpha
 exe "hi AlphaHeader guifg="s:warm12_gui
@@ -57,7 +73,7 @@ exe "hi TelescopePromptNormal guifg="s:warmfg_gui. " guibg="s:warm0_gui
 exe "hi TelescopePromptPrefix guifg="s:warm9_gui. " guibg="s:warm0_gui
 exe "hi TelescopeNormal guibg="s:warmbg_alt
 exe "hi TelescopePreviewBorder guifg="s:warmbg_alt." guibg="s:warmbg_alt
-exe "hi TelescopePreviewTitle guifg="s:warm0_gui." guibg="s:warm12_gui
+exe "hi TelescopePreviewTitle guifg="s:warmbg_alt." guibg="s:warmbg_alt
 exe "hi TelescopePromptTitle guifg="s:warm8_gui." guibg="s:warm9_gui
 exe "hi TelescopeResultsTitle guifg="s:warmbg_alt." guibg="s:warmbg_alt
 exe "hi TelescopeResultsBorder guifg="s:warmbg_alt." guibg="s:warmbg_alt
@@ -69,7 +85,7 @@ exe "hi WhichKeyValue guifg="s:warm12_gui. " guibg="s:warmbg_alt
 exe "hi WhichKeySeparator guifg="s:warm5_gui. " guibg="s:warmbg_alt
 exe "hi WhichKeyDesc guifg="s:warm9_gui. " guibg="s:warmbg_alt
 "Syntax Highlighting
-exe "hi CursorLineNR guifg=" s:warmbg_gui." guibg="s:warmbg_gui
+exe "hi CursorLineNR guifg=" s:warmfg_gui." guibg="s:warmbg_gui
 exe "hi CursorLine guibg=" s:warmbg_gui
 
 exe "hi ErrorMsg guifg=" s:warm1_gui." guibg="s:warm8_gui
@@ -110,8 +126,8 @@ exe "hi Storage guifg=" s:warm9_gui
 exe "hi Statement guifg=" s:warm5_gui
 exe "hi Operator guifg=" s:warm4_gui
 exe "hi ColorColumn guibg=" s:warm8_gui
-exe "hi PMenu guifg="s:warm7_gui." guibg=" s:warm0_gui
-exe "hi PMenuSel guifg="s:warm8_gui." guibg="s:warm5_gui
+exe "hi PMenu guifg="s:warm7_gui." guibg=" s:warmbg_alt
+exe "hi PMenuSel guifg="s:warm8_gui." guibg="s:warm12_gui
 exe "hi SignColumn guibg=" s:warm0_gui
 exe "hi Title guifg=" s:warm3_gui
 exe "hi LineNr guifg="s:warm8_gui
@@ -297,13 +313,13 @@ exe "hi goTodo guifg="s:warm3_gui
 exe "hi goType guifg="s:warm3_gui
 
 " NvimTree Highlights
-exe "hi NvimTreeFolderIcon guifg="s:warm3_gui
+exe "hi NvimTreeFolderIcon guifg="s:warm11_gui
 exe "hi NvimTreeFoldername guifg="s:warmfg_gui
-exe "hi NvimTreeOpenedFolderName guifg="s:warm4_gui
-exe "hi NvimTreeEmptyFolderName guifg="s:warm4_gui
+exe "hi NvimTreeOpenedFolderName guifg="s:warmfg_gui
+exe "hi NvimTreeEmptyFolderName guifg="s:warm11_gui
 exe "hi NvimTreeFileDirty guifg="s:warm1_gui
 exe "hi NvimTreeExecFile guifg="s:warmfg_gui
 exe "hi NvimTreeGitDirty guifg="s:warm1_gui
 exe "hi NvimTreeGitDeleted guifg="s:warm1_gui
 exe "hi NvimTreeRootFolder guifg="s:warm5_gui
-exe "hi NvimTreeIndentMarker guifg="s:warm0_gui
+exe "hi NvimTreeIndentMarker guifg="s:warm8_gui
